@@ -1,0 +1,19 @@
+extends layout
+
+block content
+ include menu.jade
+ a(id='error', href='#',onclick='document.activeElement.blur();return false;') 
+ h1 #{title}
+
+ section(id='contenido')
+  article(id='c1')
+   if(comando == 1)
+    h2 Opciones
+    form(name='opciones')
+     select(name='year')
+      - var n = 1990
+      while n < 2030
+       option(value='#{n}') #{n++}
+  article(id='c2')
+   if(comando == 1)
+    input(type='button',value='Generar', onclick='generar()')

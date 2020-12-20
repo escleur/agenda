@@ -1,0 +1,25 @@
+extends layout
+
+block content
+ div(class='botonmenu', onclick='location.href="signin"') Ingresa a tu cuenta
+ a(id='error', href='#',onclick='document.activeElement.blur();return false;') 
+ h1(class='fontadm') Calendario agenda
+ h2(class='fontabf') Registrarse
+ form(name='in',method='post',action='/signin',enctype='application/x-www-form-urlencoded')
+  div
+   label(class='fontat') Usuario: 
+   input(name='nick',type='text' onkeydown="regist(event)") 
+  div
+   label(class='fontat') Clave de acceso: 
+   input(name='pass',type='password' onkeydown="regist(event)") 
+  div
+   label(class='fontat') Repita clave: 
+   input(name='comp',type='password' onkeydown="regist(event)") 
+  div
+   label(class='fontat') Apellido: 
+   input(name='last',type='text' onkeydown="regist(event)") 
+  div
+   label(class='fontat') Nombre: 
+   input(name='first',type='text' onkeydown="regist(event)") 
+  input(class='boton noselect' onclick='opSignUp()' value='Registrar' readonly)
+ h3 Copyright 2015

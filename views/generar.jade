@@ -1,0 +1,66 @@
+extends layout
+
+block content
+ include menu.jade
+ a(id='error', href='#',onclick='document.activeElement.blur();return false;') 
+ h1 #{title}
+
+ section(id='contenido')
+  article(id='c1')
+   header Opciones
+   form(name='opciones' method='post' action='generar/seleccion')
+    each val in datos.config
+     input(type='radio' name='config' value='ID#{val.nombre}')
+     span #{val.nombre}
+     br
+    div
+     input(type='radio' name='config' value='nuevo' checked) 
+     input(type='text' name='nuevo' title='Si no ingresa nombre asigna a default.' placeholder='Nombre Agenda' autocomplete='off' autofocus)
+    input(type='submit' value='Seleccionar configuracion' class='botonconfig')
+
+  article(id='c2')
+   -var actual = {agendaSel:[],yearSel:2016,resaltaFer:false};
+   each val in datos.config
+    if val.nombre == config
+     -actual = val
+
+   form(name='configuracion')
+    header Configuración actual: [#{config}]
+    fieldset
+     leyend Lista de agendas
+     br
+     each val in datos.agenda
+      -var esta = false
+      each i in actual.agendaSel
+       if i.nombre == val.nombre
+        -esta = true
+      if esta
+       input(type='checkbox' name='agendas[]' value='#{val.nombre}' checked)
+      else
+       input(type='checkbox' name='agendas[]' value='#{val.nombre}')
+      
+      span #{val.nombre}
+      br
+    br
+    fieldset
+     leyend Opciones
+     br
+     if actual.resaltaFer 
+      input(type='checkbox' name='resaltar' value='true' checked)
+     else
+      input(type='checkbox' name='resaltar' value='true')
+     span Resaltar feriados
+     br
+     span Año a generar
+     .select
+      select(name='year')
+       - var n = 1970
+       while n < 2050
+        if n == actual.yearSel
+         option(value='#{n}' selected) #{n++}
+        else
+         option(value='#{n}') #{n++}
+    input(type='button',value='Guardar opciones', onclick='saveOptions()' class='botonconfig')
+    input(type='button' value='Eliminar' onclick='eliminar()' class='botonconfig')
+ .pie  
+  input(type='button',value='Generar', onclick='generar()' class='generar')

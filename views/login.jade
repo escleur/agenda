@@ -1,0 +1,15 @@
+extends layout
+
+block content
+ div(class='botonmenu', onclick='location.href="signup"') Registrate aca
+ a(id='error', href='#',onclick='document.activeElement.blur();return false;') 
+ h1(class='fontadm') Calendario agenda
+ h2(class='fontabf') Inicio de secion
+ form(name='in',method='post',action='/signin',enctype='application/x-www-form-urlencoded')
+  div
+   label(class='fontat') Usuario: 
+   input(name='nick',type='text' autocomplete='off' onkeydown="login(event)") 
+  div
+   label(class='fontat') Clave de acceso: 
+   input(name='pass',type='password' onkeydown="login(event)") 
+  input(class='boton noselect' onclick='opSignIn()' value='Iniciar Secion' readonly)

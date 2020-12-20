@@ -1,0 +1,397 @@
+body {
+	background: #ddddbb;
+	padding: 50px;
+	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	padding-top: 12rem;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.botonmenu {
+	background: #6688aa;
+	border: 1px black solid;
+	color: #bbccdd;
+	display: inline-block;
+	margin: .5rem;
+	padding: 1rem;
+
+	-webkit-transform: skew(-20deg);
+    -moz-transform: skew(-20deg);
+    -ms-transform: skew(-20deg);
+    -o-transform: skew(-20deg);
+    transform: skew(-20deg);
+    
+}
+
+
+.botonmenu:hover {
+	background: #77aacc;
+	color: #225588;
+}
+
+body>h1 {
+	font: 3rem Georgia, serif;
+	/*"Lucida Grande", Helvetica, Arial, sans-serif;*/
+	text-align: center;
+	margin-top: 0;
+}
+
+h2 {
+	font: 3rem Georgia, serif;
+}
+
+
+#banner {
+	background-image: url("../images/header.png");
+	background-size: 2000px 250px;
+	left: 0;
+	top: 0;
+	position: absolute;
+	height: 250px;
+	width: 2000px;
+}
+
+form {
+	/*font-size: 2rem;*/
+	display: inline-block;
+
+}
+
+form div {
+	text-align: right;
+	height: 5rem;
+}
+
+form div input {
+//	font-size: 1.2rem;
+}
+
+.botonAceptar {
+	display: inline-block;
+	height: 3rem;
+	min-width: 5rem;
+	font-size: 1.8rem;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.botonAceptar > div {
+	border-radius: 1rem;
+	border: 1px #ff5c6f solid;
+	box-shadow: .3rem .3rem #bb3c4f;
+	height: 2rem;
+	padding: .3rem;
+	color: white;
+	
+background: rgba(247,225,228,1);
+background: -moz-radial-gradient(center, ellipse cover, rgba(247,225,228,1) 0%, rgba(201,60,79,1) 5%, rgba(189,30,52,1) 25%, rgba(128,19,32,1) 92%, rgba(255,92,111,1) 97%, rgba(255,92,111,1) 100%);
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(247,225,228,1)), color-stop(5%, rgba(201,60,79,1)), color-stop(25%, rgba(189,30,52,1)), color-stop(92%, rgba(128,19,32,1)), color-stop(97%, rgba(255,92,111,1)), color-stop(100%, rgba(255,92,111,1)));
+background: -webkit-radial-gradient(center, ellipse cover, rgba(247,225,228,1) 0%, rgba(201,60,79,1) 5%, rgba(189,30,52,1) 25%, rgba(128,19,32,1) 92%, rgba(255,92,111,1) 97%, rgba(255,92,111,1) 100%);
+background: -o-radial-gradient(center, ellipse cover, rgba(247,225,228,1) 0%, rgba(201,60,79,1) 5%, rgba(189,30,52,1) 25%, rgba(128,19,32,1) 92%, rgba(255,92,111,1) 97%, rgba(255,92,111,1) 100%);
+background: -ms-radial-gradient(center, ellipse cover, rgba(247,225,228,1) 0%, rgba(201,60,79,1) 5%, rgba(189,30,52,1) 25%, rgba(128,19,32,1) 92%, rgba(255,92,111,1) 97%, rgba(255,92,111,1) 100%);
+background: radial-gradient(ellipse at center, rgba(247,225,228,1) 0%, rgba(201,60,79,1) 5%, rgba(189,30,52,1) 25%, rgba(128,19,32,1) 92%, rgba(255,92,111,1) 97%, rgba(255,92,111,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7e1e4', endColorstr='#ff5c6f', GradientType=1 );
+    transition: margin .1s, box-shadow .1s;
+
+}
+
+.botonAceptar:active > div {
+	box-shadow: none;
+	margin-left: .3rem;
+	margin-top: .3rem;
+}
+
+
+
+
+/*
+.boton {
+	display: inline-block;
+	height: 3rem;
+	min-width: 5rem;
+	font-size: 1.8rem;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    user-select: none;
+}*/
+
+.boton{
+	display: inline-block;
+	text-align: center;
+	border-radius: 1rem;
+	border: 1px #ff5c6f solid;
+	box-shadow: .3rem .3rem #bb3c4f;
+	height: 2rem;
+	padding: .3rem;
+	margin-right: .3rem;
+	margin-bottom: .3rem;
+	color: white;
+	width: 11rem;
+	font-size: 1.8rem;
+	
+	background: rgba(247,225,228,1);
+	background: -moz-radial-gradient(center, ellipse cover, rgba(247,225,228,1) 0%, rgba(201,60,79,1) 5%, rgba(189,30,52,1) 25%, rgba(128,19,32,1) 92%, rgba(255,92,111,1) 97%, rgba(255,92,111,1) 100%);
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(247,225,228,1)), color-stop(5%, rgba(201,60,79,1)), color-stop(25%, rgba(189,30,52,1)), color-stop(92%, rgba(128,19,32,1)), color-stop(97%, rgba(255,92,111,1)), color-stop(100%, rgba(255,92,111,1)));
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(247,225,228,1) 0%, rgba(201,60,79,1) 5%, rgba(189,30,52,1) 25%, rgba(128,19,32,1) 92%, rgba(255,92,111,1) 97%, rgba(255,92,111,1) 100%);
+	background: -o-radial-gradient(center, ellipse cover, rgba(247,225,228,1) 0%, rgba(201,60,79,1) 5%, rgba(189,30,52,1) 25%, rgba(128,19,32,1) 92%, rgba(255,92,111,1) 97%, rgba(255,92,111,1) 100%);
+	background: -ms-radial-gradient(center, ellipse cover, rgba(247,225,228,1) 0%, rgba(201,60,79,1) 5%, rgba(189,30,52,1) 25%, rgba(128,19,32,1) 92%, rgba(255,92,111,1) 97%, rgba(255,92,111,1) 100%);
+	background: radial-gradient(ellipse at center, rgba(247,225,228,1) 0%, rgba(201,60,79,1) 5%, rgba(189,30,52,1) 25%, rgba(128,19,32,1) 92%, rgba(255,92,111,1) 97%, rgba(255,92,111,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7e1e4', endColorstr='#ff5c6f', GradientType=1 );
+    transition: margin .1s, box-shadow .1s;
+
+}
+
+.boton:active{
+	box-shadow: none;
+	margin-left: .3rem;
+	margin-top: .3rem;
+	margin-right: 0;
+	margin-bottom: 0;
+}
+
+.boton:focus {
+	outline:none;
+
+}
+
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+
+#error {
+	position: relative;
+	background: #bb6655;
+	border: 2px solid #883322;
+	height: 2rem;
+	border-radius: .4rem;
+	opacity: .1;
+	padding: .2rem;
+	font-size: 1.5rem;
+	transition: opacity 1s;
+	transition-delay: 2s;
+	display:block;
+}
+#error:link, #error:visited, #error:active{
+	color: #883322;
+	text-decoration: none;
+	text-align: center;
+}
+
+#error:focus {
+	transition: opacity 0s;
+	opacity: 1;
+}
+
+#contenido {
+	background: #ba8;
+	width: 95%;
+	min-height: 10rem;
+	display: table;
+	border-spacing: 1rem;
+	border-radius: .6rem;
+}
+
+#c1, #c2 {
+	background: #bca;
+	width: 40%;
+	ffmin-height: 10rem;
+	display: table-cell;
+	ffmargin-left: 6%;
+	ffheight: auto;
+	fftop: 0;
+	ffbottom: 0;
+	ffposition: relative;
+	padding: 1rem;
+	vertical-align: top;
+	border-radius: .5rem;
+}
+
+header {
+	font-family: 'Times News Roman';
+	font-size: 1.2rem;
+	margin-bottom: 1rem;
+}
+
+p {
+	text-align: justify;
+	font-family: 'Serif';
+}
+
+/*input[type='text'] {
+	width: 10rem;
+}*/
+
+.largo {
+	width: 9rem;
+}
+.medio {
+	width: 6rem;
+}
+.corto {
+	width: 3rem;
+}
+
+th {
+	text-align: left;
+}
+
+fieldset {
+	border-radius: 1rem;
+	margin-bottom: 1rem;
+}
+
+input[type='radio'] {
+	margin: 0.5rem;
+}
+
+leyend {
+	font-weight: 600;
+	margin: .3rem;
+}
+
+input[type='checkbox'] {
+	margin: 0.5rem;
+}
+input {
+//	font-size: 1rem;
+
+}
+.generar {
+	background-color: #C7BD6C;
+	margin: 2rem;
+	padding: .5rem;
+	border-radius: 2rem;
+}
+
+.generar:active, .generar:focus {
+	outline: none;
+	background-color: #CfBf6f;
+	
+}
+
+.pie {
+	text-align: center;
+}
+
+.botonconfig {
+background-color: #90C57C;
+	border-radius: 1rem;
+}
+
+.botonconfig:active, .botonconfig:focus {
+	outline: none;
+background-color: #9fCf7f;
+}
+
+li {
+	text-align: justify;
+}
+
+.autor {
+	position: absolute;
+	right: 4rem;
+	top: 2rem;
+	font-size: 1rem;
+}
+
+select {
+	background: none;
+	
+}
+
+
+.select {
+	border: #257039 1px solid;
+	display: inline-block;
+	background: #eef6eb;
+	border-radius:.2rem;
+	height: auto;
+}
+
+
+
+.select:active {
+	background: #DCF3B5;
+	outline: #A3D774 solid 1px;
+}
+
+input[type='text'], input[type='password']{
+	border: #257039 1px solid;
+	border-radius:.2rem;
+	background: #eef6eb;
+	padding-left: 5px;
+
+}
+
+input[type='text']:focus, input[type='password']:focus {
+background: #DCF3B5;
+	outline: #A3D774 solid 1px;
+}
+select:active{
+outline: none;
+}
+
+input[type='radio']{
+background: none;
+}
+
+.fontadm {
+	line-height: 200%;
+	font-family: admiration-pains;
+}
+.fontwn{
+	font-family: white-knight;
+}
+.fontabf{
+	font-family: A-box-for-3;
+}
+.fontsc{
+	font-family: SquareCaps;
+}
+.fontdsc{
+	font-family: DSChocolade;
+}
+.fontat{
+	font-family: Attic;
+	font-size: 1.5rem;
+}
+
+@font-face {
+	font-family: admiration-pains;
+	src: url('../fonts/Admiration Pains.ttf');
+}
+@font-face {
+	font-family: white-knight;
+	src: url('../fonts/White-Knight.ttf');
+}
+@font-face {
+	font-family: A-box-for-3;
+	src: url('../fonts/A Box For 3.ttf');
+}
+@font-face {
+	font-family: SquareCaps;
+	src: url('../fonts/SquareCaps.ttf');
+}
+@font-face {
+	font-family: DSChocolade;
+	src: url('../fonts/DSChocolade.ttf');
+}
+@font-face {
+	font-family: Attic;
+	src: url('../fonts/Attic.ttf');
+}

@@ -1,0 +1,63 @@
+extends layout
+
+block content
+ include menu.jade
+ a(id='error', href='#',onclick='document.activeElement.blur();return false;') 
+ h1 #{title}
+
+ section(id='contenido')
+  article(id='c1')
+   header Información de la agenda Seleccionada.
+   if seleccion
+    each val in datos.agenda
+     if val._id == seleccion
+      p La agenda '#{val.nombre}' está seleccionada para realizar las operaciones.
+      case val.tipo
+       when 0
+        p Las fechas seleccionadas en esta agenda solo se usarán en el año especificado.
+       when 1
+        p Las fechas seleccionadas en esta agenda son aplicadas a cualquier año.
+       when 2
+        p Las fechas seleccionadas en esta agenda solo se usarán en el año especificado.
+        p Los días serán remarcados como feriados.
+       when 3
+        p Las fechas seleccionadas en esta agenda son aplicadas a cualquier año.
+        p Los días serán remarcados como feriados.
+      p Su icono es #{val.icono}
+   else
+    p Elija una agenda desde 'Agendas' para poder editarla.
+  article(id='c2')
+   header Listado de agendas
+   table
+    thead
+     tr
+      th fecha
+      th mensaje
+      th operaciones
+    tfoot
+     tr
+      td(colspan=3) 
+       form(method='post' action='edicion/nuevo' name='nuevo')
+        input(type='text' name='day' title='Ingrese el día' class='corto' placeholder='Día' autocomplete='off' autofocus)
+        input(type='text' name='month' title='Ingrese el mes' class='corto' placeholder='Mes' autocomplete='off')
+        each val in datos.agenda
+         if val._id == seleccion
+          if ((val.tipo%2) == 0)
+           input(type='text' name='year' title='Ingrese el año' class='corto' placeholder='Año' autocomplete='off')
+        input(type='text' name='msg' title='Ingrese el mensaje' class='largo' placeholder='Mensaje' autocomplete='off')
+        input(type='submit' value='Nuevo' class='botonconfig')
+    tbody
+     -var i = 0
+     each val in datos.agenda
+      if val._id == seleccion
+       each val2 in val.eventos
+        tr
+         td #{val2.day}-#{val2.month}
+          if ((val.tipo%2) == 0) 
+           span #{-val2.year}
+         td #{val2.msg}
+         td 
+          form(method='post' action='edicion/eliminar' name='elimina#{i++}')
+           input(type='hidden' name='id' value='#{val2._id}')
+           input(type='submit' value='Eliminar' class='botonconfig')
+

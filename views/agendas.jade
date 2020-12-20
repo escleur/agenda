@@ -1,0 +1,54 @@
+extends layout
+
+block content
+ include menu.jade
+ a(id='error', href='#',onclick='document.activeElement.blur();return false;') 
+ h1 #{title}
+ section(id='contenido')
+  article(id='c1')
+   header Listado de agendas
+   table
+    thead
+     tr
+      th nombre
+      th tipo
+      th icono
+      th operaciones
+    tfoot
+     tr
+      td(colspan=4) 
+       form(method='post' action='agendas/nuevo' name='nuevo')
+        input(type='text' name='nombre' class='largo' placeholder='Nombre de Agenda' autocomplete='off' autofocus)
+        .select
+         select(name='tipo' class='largo' autocomplete='off')
+          option(value='0') 0 - no repetible
+          option(value='1') 1 - repetible
+          option(value='2') 2 - feriado
+          option(value='3') 3 - repetible y feriado
+        input(type='text' name='icono' class='corto' placeholder='Icono' autocomplete='off')
+        input(type='submit' value='Nuevo' class='botonconfig')
+    tbody
+     -var i = 0
+     each val in datos.agenda
+      tr
+       td #{val.nombre}
+       td #{val.tipo}
+       td #{val.icono}
+       td 
+        form(method='post' action='agendas/eliminar' name='elimina#{i++}')
+         input(type='hidden' name='id' value='#{val._id}')
+         input(type='submit' value='Eliminar' class='botonconfig')
+  article(id='c2')
+   header Elija la agenda para editar
+   form(method='post' action='agendas/seleccion')
+    .select
+     select(name='agenda')
+      each val in datos.agenda
+       option(value='#{val._id}') #{val.nombre}
+    input(type='submit' value='Seleccionar' class='botonconfig')
+   if seleccion
+    each val in datos.agenda
+     if val._id == seleccion
+      p #{val.nombre} es la agenda seleccionada.
+   else
+    p No hay agenda seleccionada

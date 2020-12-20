@@ -1,0 +1,28 @@
+extends layout
+
+block content
+ include menu.jade
+ a(id='error', href='#',onclick='document.activeElement.blur();return false;') 
+ h1 #{title}
+
+ section(id='contenido')
+  article(id='c1')
+   header Cargando datos
+   p Desde 'Agenda' puede crear una nueva agenda. 
+    ol
+     li Asigne un nombre a su agenda.
+     li Elija si la agenda que esta creando tendra fechas que se repiten en distintos años. Este sería el caso de los cumpleaños que siempre caen el mismo día. Tambien puede elegir si son tratados como feriados en el calendario con su resaltado correspondiente.
+     li Ingrese un caracte como icono de la agenda. El mismo aparecera delante de de la descripción del evento al generar el calendario. Puede utilizar caracteres unicode como los siguiente: ♨ ✩
+     li Seleccione la agenda a editar. Una vez seleccionada puede navegar por el sitio sin perder esta selección.
+     li Desde el menu Edición puede agregar eventos o eliminarlos de la agenda seleccionada en el paso anterior.
+  article(id='c2')
+   header Generando Calendario
+   p Desde el menu 'Generar calendario' puede crear distintas configuraciones y guardarlas.
+    ol
+     li Seleccione una agenda existente desde la lista o cree una nueva escribiendo el nombre en el cuadro de texto. Si escribiera un nonbre de una configuración existente, está será leida.
+     li Una vez seleccionada la configuración su nombre aparece a continuación de 'Configuración actual'.
+     li Puede tildar o destildar las agendas que tiene disponibles para que se usen en el calendario.
+     li Cuando tilda la opción resaltar feriados, los eventos de las agendas que estan marcadas como feriados producen el resaltado del día correspondiente en el calendario. Esta opción no afecta a los días domingos que siempre son remarcados.
+     li Marque el año a generar.
+     li Puede guardar las opciones en la configuración seleccionada o eliminar la misma.
+     li Finalmente al presionar el boton Generar, recibira un archivo pdf con el calendario. Las opciones tomadas en cuenta son las mostradas en pantalla al presionar el boton, no es necesario guardar la configuración para generarlo.
